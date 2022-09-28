@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'util.dart';
+
 void main() {
   runApp(const MyWidget());
 }
@@ -20,25 +22,37 @@ class _MyWidgetState extends State<MyWidget> {
     );
   }
 
+  calcular() {}
+
   paginaPrincipal() {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
-        child: Column(children: const [
-          Icon(
+        child: Column(children: [
+          const Icon(
             Icons.person,
             size: 200,
             color: Colors.green,
           ),
-          TextField(
+          const TextField(
             decoration: InputDecoration(
+              labelText: "Digite seu peso",
               border: OutlineInputBorder(),
             ),
           ),
-          TextField(
+          const SizedBox(height: 5, width: 100),
+          const TextField(
               decoration: InputDecoration(
             border: OutlineInputBorder(),
+            labelText: "Digite sua altura",
           )),
+          const SizedBox(height: 25),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Util().criarBotao("Calcular", 30, Colors.white, Colors.green),
+            ],
+          )
         ]),
       ),
       appBar: AppBar(

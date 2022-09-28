@@ -9,13 +9,16 @@ class Util {
     );
   }
 
-  criarBotao(conteudoTexto, tamanhoTexto, corTexto, acaoBotao, corFundoBotao) {
+  criarBotao(conteudoTexto, tamanhoTexto, corTexto, corFundoBotao) {
     return TextButton(
         style: TextButton.styleFrom(
+            backgroundColor: corFundoBotao,
             shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-        )),
-        onPressed: acaoBotao,
+              borderRadius: BorderRadius.circular(5),
+            )),
+        onPressed: () {
+          print("OK");
+        },
         child: criarTexto(conteudoTexto, tamanhoTexto, corTexto));
   }
 }
