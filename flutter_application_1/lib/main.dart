@@ -32,11 +32,11 @@ class _MyWidgetState extends State<MyWidget> {
 
   calcular() {
     setState(() {
-      double peso = double.parse(pesoController.text);
-      double altura = double.parse(alturaController.text);
+      double peso = double.parse(pesoController.text.replaceAll(",", "."));
+      double altura = double.parse(alturaController.text.replaceAll(",", "."));
 
       double imc = peso / (altura * altura);
-      String imcText = imc.toStringAsPrecision(4);
+      String imcText = imc.toStringAsPrecision(4).replaceAll(".", ",");
       //toStringAsPrecision(4) = Mostrar 4 casas após a vírgula
       // mensagem = imcText;
       if (imc < 18.6) {
