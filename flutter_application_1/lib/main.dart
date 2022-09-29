@@ -67,7 +67,7 @@ class _MyWidgetState extends State<MyWidget> {
 
   paginaPrincipal() {
     return Scaffold(
-      appBar: Util().appBar(limparCampos()),
+      appBar: Util().appBar(limparCampos),
       body: Column(children: [
         const SizedBox(height: 20),
         Util().icone(),
@@ -78,9 +78,9 @@ class _MyWidgetState extends State<MyWidget> {
             "Informe sua altura"),
         const SizedBox(height: 20),
         Util().criarBotao(formController, "Calcular", 20, Colors.white,
-            calcular(), Colors.green),
+            calcular, Colors.green),
         const SizedBox(height: 20),
-        Util().criarTexto(mensagem, 20, Colors.black)
+        Util().criarTexto(mensagem, 20, Colors.black),
       ]),
     );
   }
